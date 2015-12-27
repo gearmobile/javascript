@@ -4,6 +4,10 @@ var buttonAfter = document.querySelector('.after');
 var buttonBefore = document.querySelector('.before');
 var buttonClone = document.querySelector('.clone');
 
+// -----------------------------------------------------------
+var empty = document.querySelector('#empty');
+// -----------------------------------------------------------
+
 
 block.addEventListener('click', function () {
 
@@ -42,3 +46,5 @@ buttonClone.addEventListener('click', function () {
 	elementCloned.querySelector('span').innerHTML = 'cloned'; // modify cloned copy
 	newElement.parentNode.insertBefore(elementCloned, newElement.nextSibling); // insert cloned copy
 });
+
+
