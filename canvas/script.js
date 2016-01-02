@@ -6,7 +6,6 @@ window.onload = function () {
 	var canvasHeight = canvas.height;
 
 	canvas.fillRect(10,20,200,100);
-	// canvas.fillStyle = '#0cf';
 
 	canvas.moveTo(10,10);
 	canvas.lineTo(200,200);
@@ -16,8 +15,8 @@ window.onload = function () {
 	canvas.textAlign = 'center';
 	canvas.fillText('canvas', 50, 10);
 
-	setTimeout( function () {
-		alert(canvasHeight);
-	}, 1000)
+	// setTimeout( function () {
+	// 	alert(canvasHeight);
+	// }, 1000)
 
 };
