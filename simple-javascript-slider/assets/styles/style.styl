@@ -1,0 +1,25 @@
+@import 'base'
+
+.slider
+	width 800px
+	height 500px
+	margin 2rem auto 0
+	border 1px solid #000
+	overflow hidden
+	position relative
+
+	&__image
+		display block
+		width 100%
+		height auto
+
+	&__button
+		position absolute
+		top 50%
+		transform translateY(-50%)
+
+		&--prev
+			left 40rem
+
+		&--next
+			right 40rem
