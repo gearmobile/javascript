@@ -12,6 +12,10 @@
 	align-items: center;
 }
 
+.list:not(:last-child) {
+	margin-bottom: 2rem;
+}
+
 .list__item {
 	display: block;
 	width: 200px;
@@ -19,16 +23,11 @@
 	background-color: beige;
 	border: 1px solid #000;
 	cursor: pointer;
+	-webkit-transition: background-color .2s;
+	-o-transition: background-color .2s;
+	transition: background-color .2s;
 }
 
-.uno-active {
+.active {
 	background-color: salmon;
-}
-
-.duo-active {
-	background-color: firebrick;
-}
-
-.tre-active {
-	background-color: lightgreen;
 }
