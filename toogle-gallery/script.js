@@ -1,11 +1,28 @@
 $(function () {
 
+  // BUTTON FUNCTION
+  // ---------------------------------------------------
+
+  var $button = $('.showmore');
+  var $buttonClass = 'is-open';
+  var $buttonMore = 'show more';
+  var $buttonLess = 'show less';
+
+  jQuery.fn.toggleText = function ( $more, $less, $class ) {
+    $(this).on('click', function () {
+      $(this).text( ( $(this).text() === $more ) ? $less : $more ).toggleClass($class);
+    })
+  };
+
+  $button.text($buttonMore);
+  $button.toggleText( $buttonMore, $buttonLess, $buttonClass );
+
+
   // FIRST EXAMPLE
   // -------------------------------------------
 
   var flag = 'short';
   var $col = $('.collection > li');
-  var $button = $('.showmore');
 
   $col.each( function ( index ) {
     if ( index < $col.length / 2 ) {
@@ -13,7 +30,7 @@ $(function () {
     } else {
       $(this).css('display','none');
     }
-  })
+  });
 
   $button.on('click', function () {
     flag = ( flag === 'short' ) ? 'full' : 'short';
