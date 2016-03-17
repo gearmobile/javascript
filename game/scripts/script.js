@@ -71,3 +71,14 @@ sQuare(a);
 sQuare({x:50,side:25,color:'green'});
 sQuare({"x":"110", "side":"35", "color":"blue"});
 sQuare(Object.create({x:180,side:45,color:'forestgreen'}));
+
+
+// CANVAS IMAGE
+
+var image = document.querySelector('#canvas5');
+var ctxImage = image.getContext('2d');
+var photo = new Image();
+photo.onload = function () {
+  ctxImage.drawImage(photo, 5, 5, 250, 120);
+};
+photo.src = './images/sample.jpg';
