@@ -3,10 +3,6 @@
   height: 200px;
 }
 
-.canvas,
-.canvas1,
-.canvas2,
-.canvas3,
-.canvas4 {
+.canvas {
   border: 1px solid #000;
 }
