@@ -11,3 +11,11 @@ nav > a {
   margin: .4rem 0;
   text-transform: capitalize;
 }
+
+hr {
+  width: 99%;
+  box-shadow: none;
+  border: none;
+  height: 1px;
+  background-color: coral;
+}

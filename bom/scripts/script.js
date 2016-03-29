@@ -1,5 +1,13 @@
-var interval = '';
-var timer = '';
+var timeOut;
+var interval;
+
+function helloTimeout() {
+  alert('Hello from setTimeout function after 2 seconds!');
+}
+
+function helloInterval() {
+  alert('Hello from setInterval function with interval 3 seconds!');
+}
 
 function f() {
   console.log('hello from href');
@@ -32,19 +40,21 @@ function promptMethod() {
 }
 
 function demoSetTimeout() {
-  timer = window.setTimeout("alert('after 2 seconds')", 2000);
-  console.log(typeof timer);
+  timeOut = setTimeout("helloTimeout()", 2000);
 }
 
-function demoClearSetTimeout() {
-  window.clearTimeout(timer);
+function demoClearSetTimeOut() {
+  window.clearTimeout(timeOut);
 }
 
 function demoSetInterval() {
-  interval = window.setInterval("alert('after 3 seconds')", 3000);
-  console.log(interval);
+  interval = setInterval("helloInterval()", 3000);
 }
 
 function demoClearSetInterval() {
   window.clearInterval(interval);
+}
+
+function openWindow() {
+  window.open();
 }
