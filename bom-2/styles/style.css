@@ -1,0 +1,12 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 60%;
+}
+
+a {
+  text-transform: capitalize;
+  font-size: 18px;
+  text-decoration: none;
+}

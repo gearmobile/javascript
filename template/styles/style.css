@@ -1,9 +1,0 @@
-.list {
-	padding: 1rem;
-}
-
-.active {
-	-webkit-box-shadow: inset .1rem .1rem 0 rgba(0,0,0,.9);
-	box-shadow: inset .1rem .1rem 0 rgba(0,0,0,.9);
-	/*border: 1px solid #000;*/
-}
