@@ -2,6 +2,8 @@ var newWindow;
 var blurWindow;
 var positionWindow;
 
+var params = 'width=300, height=300, status=1, menubar=1, toolbar=1';
+
 function demoOpen() {
   window.open();
 }
