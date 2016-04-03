@@ -16,8 +16,13 @@ try {
 } catch (e) {
   console.log(e.name, e.message);
 }
+
 console.log('The end');
 
 function moo() {
   alert('Moo!');
+}
+
+function foo(params) {
+    //
 }
