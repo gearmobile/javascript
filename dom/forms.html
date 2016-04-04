@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Form JavaScript</title>
+  <link rel="stylesheet" href="styles/form.css"/>
+</head>
+<body>
+
+  <div class="wrapper">
+    <form action="action.php" method="post" name="primo">
+      <input type="text" name="name" value="your name"/>
+      <input type="email" name="email" value="your email"/>
+      <input type="password" name="password" value="password"/>
+    </form>
+    <form action="action.php" method="post" name="secondo">
+      <input type="text" name="name" value="your name"/>
+      <input type="email" name="email" value="your email"/>
+      <input type="password" name="password" value="password"/>
+    </form>
+    <form action="action.php" method="post" name="tetro">
+      <input type="text" name="name" value="your name"/>
+      <input type="email" name="email" value="your email"/>
+      <input type="password" name="password" value="password"/>
+    </form>
+  </div>
+
+  <div class="wrapper">
+    <form class="example" action="action.php" name="example" method="post" target="_blank">
+      <fieldset>
+        <legend>I'm seeking</legend>
+        <label for="word">Word</label>
+        <input type="text" name="word" id="word" value="sparrow"/>
+      </fieldset>
+      <div class="buttons">
+        <a id="click" href="javascript:click();">click</a>
+        <a id="reset" href="javascript:reset();">reset</a>
+        <a id="submit" href="javascript:submit();">submit</a>
+        <a id="empty" href="javascript:empty();">empty</a>
+        <a id="focus" href="javascript:focus();">focus</a>
+        <a id="blur" href="javascript:blur();">blur</a>
+        <a id="select" href="javascript:select();">select</a>
+        <a id="trigger" href="javascript:trigger();">trigger</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="wrapper">
+    <h1>check form inputs before submit</h1>
+    <form action="action.php" name="lab" id="lab" method="post" target="_blank">
+      <fieldset>
+        <legend>form</legend>
+        <div class="row">
+          <label for="text1">text 1</label>
+          <input type="text" id="text1" name="text1" value=""/>
+        </div>
+        <div class="row">
+          <label for="text2">text 2</label>
+          <input type="text" id="text2" name="text1" value=""/>
+        </div>
+        <div class="row">
+          <label for="text3">text 3</label>
+          <input type="text" id="text3" name="text3" value=""/>
+        </div>
+        <div class="row">
+          <label for="text4">text 4</label>
+          <input type="text" id="text4" name="text4" value=""/>
+        </div>
+        <div class="row">
+          <label for="text5">text 5</label>
+          <input type="text" id="text5" name="text5" value=""/>
+        </div>
+        <div class="formButtons">
+          <button id="submitData" type="button">submit data</button>
+          <button id="resetData" type="button">reset data</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="wrapper">
+    <form action="action.php" name="check" id="check" method="post" target="_blank">
+      <fieldset>
+        <legend>checkbox with javascript</legend>
+        <div class="row">
+          <input type="checkbox" name="checkBox" id="checkBox1"/>
+          <label for="checkBox1">checkbox 1</label>
+        </div>
+        <div class="row">
+          <input type="checkbox" name="checkBox" id="checkBox2"/>
+          <label for="checkBox2">checkbox 2</label>
+        </div>
+        <div class="row">
+          <input type="checkbox" name="checkBox" id="checkBox3"/>
+          <label for="checkBox3">checkbox 3</label>
+        </div>
+        <div class="row">
+          <input type="checkbox" name="checkBox" id="checkBox4"/>
+          <label for="checkBox4">checkbox 4</label>
+        </div>
+        <div class="row">
+          <input type="checkbox" name="checkBox" id="checkBox5"/>
+          <label for="checkBox5">checkbox 5</label>
+        </div>
+      </fieldset>
+      <div class="row">
+        <div class="checkboxButtons">
+          <button id="resetForm" type="button">reset form</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="scripts/forms.js"></script>
+</body>
+</html>
