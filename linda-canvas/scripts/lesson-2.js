@@ -7,6 +7,7 @@ window.onload = function () {
   var canvas = document.querySelector('#canvas');
   var lines = document.querySelector('#lines');
   var linecaps = document.querySelector('#linecaps');
+  var linejoin = document.querySelector('#linejoin');
 
   if ( canvas && canvas.getContext ) {
 
@@ -37,7 +38,7 @@ window.onload = function () {
     }
   }
 
-  // draw lines
+  // DRAW LINES
   if ( lines && lines.getContext ) {
     lines.width = 600;
     lines.height = 300;
@@ -54,12 +55,16 @@ window.onload = function () {
     }
   }
 
-  // draw line caps
+  // DRAW LINE CAPS
   if ( linecaps && linecaps.getContext ) {
+
     linecaps.width = 600;
     linecaps.height = 300;
+
     var linecapsCtx = linecaps.getContext('2d');
+
     if ( linecapsCtx ) {
+
       linecapsCtx.strokeStyle = 'cyan';
       linecapsCtx.lineWidth = 1;
       linecapsCtx.beginPath();
@@ -68,7 +73,72 @@ window.onload = function () {
       linecapsCtx.moveTo(450,25);
       linecapsCtx.lineTo(450,175);
       linecapsCtx.stroke();
+      linecapsCtx.save();
+
+
+      linecapsCtx.lineWidth = 25;
+      linecapsCtx.strokeStyle = '#000';
+
+      // draw linecap = butt ---------------
+      linecapsCtx.lineCap = 'butt';
+      linecapsCtx.beginPath();
+      linecapsCtx.moveTo(50,50);
+      linecapsCtx.lineTo(450,50);
+      linecapsCtx.stroke();
+
+      // draw linecap = rounded ------------
+      linecapsCtx.lineCap = 'round';
+      linecapsCtx.beginPath();
+      linecapsCtx.moveTo(50,100);
+      linecapsCtx.lineTo(450,100);
+      linecapsCtx.stroke();
+
+      // draw linecap = square ------------
+      linecapsCtx.lineCap = 'square';
+      linecapsCtx.beginPath();
+      linecapsCtx.moveTo(50,150);
+      linecapsCtx.lineTo(450,150);
+      linecapsCtx.stroke();
     }
   }
+
+  if ( linejoin && linejoin.getContext ) {
+
+    linejoin.width = 600;
+    linejoin.height = 300;
+
+    var linejoinCtx = linejoin.getContext('2d');
+
+    if ( linejoinCtx ) {
+      linejoinCtx.lineWidth = 15;
+      linejoinCtx.strokeStyle = '#000';
+
+      // draw linejoin = round
+      linejoinCtx.lineJoin = 'round';
+      linejoinCtx.beginPath();
+      linejoinCtx.moveTo(25,150);
+      linejoinCtx.lineTo(75,50);
+      linejoinCtx.lineTo(125,150);
+      linejoinCtx.stroke();
+
+      // draw linejoin = bevel
+      linejoinCtx.lineJoin = 'bevel';
+      linejoinCtx.beginPath();
+      linejoinCtx.moveTo(175,150);
+      linejoinCtx.lineTo(225,50);
+      linejoinCtx.lineTo(275,150);
+      linejoinCtx.stroke();
+
+      // draw linejoin = miter
+      linejoinCtx.lineJoin = 'miter';
+      linejoinCtx.beginPath();
+      linejoinCtx.moveTo(325,150);
+      linejoinCtx.lineTo(375,50);
+      linejoinCtx.lineTo(425,150);
+      linejoinCtx.stroke();
+    }
+
+  }
+
 
 };
