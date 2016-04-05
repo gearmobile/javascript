@@ -11,4 +11,5 @@ window.onload = function () {
       canvasContext.fillRect( 0, 0, canvasContext.canvas.width, canvasContext.canvas.height );
     }
   }
+
 };
