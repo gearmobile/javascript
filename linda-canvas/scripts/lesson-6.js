@@ -9,7 +9,7 @@ window.onload = function () {
   if ( text && text.getContext ) {
 
     text.width = 900;
-    text.height = 300;
+    text.height = 400;
 
     var textCtx = text.getContext('2d');
 
@@ -27,22 +27,25 @@ window.onload = function () {
       // DRAW TEXT WITH SOME FONT SETTINGS
       textCtx.fillStyle = 'sienna';
       textCtx.font = 'bold 2rem Arial, sans-serif';
-      textCtx.fillText(theString,20,60);
+      textCtx.fillText(theString,20,90);
       textCtx.save();
 
-      // draw text with stroke and fill
-      textCtx.lineWidth = 3;
+      // DRAW TEXT WITH STROKE AND FILL
+      textCtx.lineWidth = 4;
       textCtx.font = '3rem Verdana';
       textCtx.fillStyle = 'yellow';
       textCtx.strokeStyle = 'rgba(0,255,0,.8)';
-      textCtx.textBaseline = 'middle';
+      //textCtx.textBaseline = 'middle';
       textCtx.strokeText(theString,20,160);
       textCtx.fillText(theString,20,160);
       textCtx.save();
 
-      // draw text with measureText
-      textCtx.fillStyle = 'blue';
+      // DRAW TEXT WITH MEASURETEXT
+      var textWidth = textCtx.measureText(theString).width;
       textCtx.beginPath();
+      textCtx.strokeStyle = 'red';
+      textCtx.moveTo(20,180);
+      textCtx.lineTo(textWidth,180);
       textCtx.stroke();
 
     }
