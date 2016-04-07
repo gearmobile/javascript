@@ -3,3 +3,10 @@ canvas {
   border: 1px dotted #333;
   margin: 2px;
 }
+
+
+/* HIDE VIDEO */
+
+video {
+  display: none;
+}

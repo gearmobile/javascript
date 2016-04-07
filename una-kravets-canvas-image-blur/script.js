@@ -1,0 +1,71 @@
+/**
+ * Created by zencoder on 4/7/16.
+ */
+// https://www.viget.com/articles/instagram-style-filters-in-html5-canvas
+
+window.onload = function () {
+
+  var canvas = document.querySelector('#canvas');
+
+  if ( canvas && canvas.getContext ) {
+
+    var photo = new Image();
+
+    function render() {
+
+      // SCALE SO THAT THE IMAGE FILLS THE CONTAINER
+      var width = window.innerWidth;
+      var scale = width / photo.naturalWidth;
+      var height = photo.naturalHeight * scale;
+
+      canvas.width = width;
+      canvas.height = height;
+
+      var canvasCtx = canvas.getContext('2d');
+
+      if ( canvasCtx ) {
+        canvasCtx.drawImage(photo, 0, 0);
+      }
+
+      var gradient = radialGradient(width,height);
+
+    }
+
+    // MAKE RADIAL GRADIENT WITH WIDTH AND HEIGHT
+    function radialGradient(width, height) {
+
+      var texture = document.querySelector('#canvas');
+
+      if ( texture && texture.getContext ) {
+
+        texture.width;
+        texture.height;
+
+        var textureCtx = texture.getContext('2d');
+
+        if ( textureCtx ) {
+          var gradient = textureCtx.createRadialGradient(width/2, height/2, 0, width/2, height/2, width * .6);
+
+          gradient.addColorStop(0, '#804e0f');
+          gradient.addColorStop(1, '#3b003b');
+
+          textureCtx.fillStyle = gradient;
+          textureCtx.fillRect(0, 0, textureCtx.canvas.width, textureCtx.canvas.height);
+
+          return textureCtx;
+        }
+
+      }
+
+    }
+
+    photo.onload = render;
+    photo.crossOrigin = 'Anonymous';
+    photo.src = 'https://s3.amazonaws.com/share.viget.com/images/viget-works.jpg';
+
+  }
+
+
+
+};
+
