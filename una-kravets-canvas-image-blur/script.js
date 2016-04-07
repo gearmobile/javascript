@@ -5,6 +5,10 @@
 
 window.onload = function () {
 
+  var sColor = '#804e0f';
+  var eColor = '#3b003b';
+  var photoSRC = 'https://s3.amazonaws.com/share.viget.com/images/viget-works.jpg';
+
   var canvas = document.querySelector('#canvas');
 
   if ( canvas && canvas.getContext ) {
@@ -38,16 +42,16 @@ window.onload = function () {
 
       if ( texture && texture.getContext ) {
 
-        texture.width;
-        texture.height;
+        texture.width = width;
+        texture.height = height;
 
         var textureCtx = texture.getContext('2d');
 
         if ( textureCtx ) {
           var gradient = textureCtx.createRadialGradient(width/2, height/2, 0, width/2, height/2, width * .6);
 
-          gradient.addColorStop(0, '#804e0f');
-          gradient.addColorStop(1, '#3b003b');
+          gradient.addColorStop(0, sColor);
+          gradient.addColorStop(1, eColor);
 
           textureCtx.fillStyle = gradient;
           textureCtx.fillRect(0, 0, textureCtx.canvas.width, textureCtx.canvas.height);
@@ -61,7 +65,7 @@ window.onload = function () {
 
     photo.onload = render;
     photo.crossOrigin = 'Anonymous';
-    photo.src = 'https://s3.amazonaws.com/share.viget.com/images/viget-works.jpg';
+    photo.src = photoSRC;
 
   }
 
