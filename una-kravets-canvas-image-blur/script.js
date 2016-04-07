@@ -1,7 +1,9 @@
 /**
  * Created by zencoder on 4/7/16.
  */
+
 // https://www.viget.com/articles/instagram-style-filters-in-html5-canvas
+// https://www.bing.com/videos/search?q=javascript&&view=detail&mid=20047092674A7E6C5CAC20047092674A7E6C5CAC&FORM=VRDGAR
 
 window.onload = function () {
 
