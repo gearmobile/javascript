@@ -10,3 +10,16 @@ canvas {
 video {
   display: none;
 }
+
+/* MOUSE EVENTS IN CANVAS */
+
+.row {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+}
