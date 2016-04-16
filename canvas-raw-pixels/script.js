@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', function () {
     putImage.canvas.width = 400;
     putImage.canvas.height = 400;
 
-    
+
 
 
   }
