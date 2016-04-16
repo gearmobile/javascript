@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', function () {
     flag = !flag;
   });
 
-  document.querySelector('#changeSize').addEventListener('click', function () {
-    var originImage = document.querySelector('#imageSecond');
-    var normalWidth = 640;
-    if ( originImage.width > normalWidth ) {
-      originImage.width *= 1.1;
-      originImage.height *= 1.1;
-      setTimeout( 'setTimeout()', 50);
-    }
-  });
-
 });
+
+function resizeImage () {
+  var originImage = document.querySelector('#imageSecond');
+  var normalWidth = 600;
+  if ( originImage.width < normalWidth ) {
+    originImage.width *= 1.1;
+    originImage.height *= 1.1;
+    setTimeout( 'resizeImage()', 100);
+  }
+}
