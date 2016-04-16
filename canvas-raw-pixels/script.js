@@ -59,18 +59,4 @@ window.addEventListener('DOMContentLoaded', function () {
 
   }
 
-  // PUT IMAGE DATA
-
-  var putImage = document.querySelector('#putImage').getContext('2d');
-
-  if ( putImage ) {
-
-    putImage.canvas.width = 400;
-    putImage.canvas.height = 400;
-
-
-
-
-  }
-
 });
