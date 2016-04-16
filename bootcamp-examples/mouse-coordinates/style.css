@@ -1,0 +1,13 @@
+#canvas {
+  float: left;
+  border: 1px dotted #000;
+}
+
+.report {
+  float: left;
+  width: 400px;
+  height: 400px;
+  border: 1px solid darkred;
+  margin-left: 1rem;
+  text-align: center;
+}
