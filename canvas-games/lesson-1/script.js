@@ -10,36 +10,51 @@ document.addEventListener('DOMContentLoaded', function () {
   if ( ctx ) {
 
     var startX = 75;
+    var startY = 50;
     var ballSpeedX = 5;
-    var framesPreSecond = 30;
+    var ballSpeedY = 7;
+    var framesPreSecond = 50;
 
     ctx.canvas.width = 800;
     ctx.canvas.height = 600;
 
-    setInterval(updateAll, 1000/framesPreSecond);
-
-    function updateAll () {
+    function moveAll() {
       startX += ballSpeedX;
-
-      if ( startX > ctx.canvas.width ) {
+      startY += ballSpeedY;
+      if ( startX > ctx.canvas.width || startX < 0 ) {
         ballSpeedX *= -1;
-        console.log(ballSpeedX + ' and ' + startX);
       }
+      if ( startY > ctx.canvas.height || startY < 0 ) {
+        ballSpeedY *= -1;
+      }
+    }
 
-      ctx.fillStyle = '#000';
-      ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-      ctx.save();
+    function drawCanvas(topLeftX, topLeftY, boxWidth, boxHeight, fillColor) {
+      ctx.fillStyle = fillColor;
+      ctx.fillRect(topLeftX, topLeftY, boxWidth, boxHeight);
+    }
 
-      ctx.fillStyle = '#fff';
+    function drawBall(fillColor, ballRadius) {
+      ctx.fillStyle = fillColor;
       ctx.beginPath();
-      ctx.arc(startX, 100, 10, 0, 360*Math.PI/180, true);
+      ctx.arc(startX, startY, ballRadius, 0, 360*Math.PI/180, true);
       ctx.fill();
       ctx.closePath();
       ctx.save();
     }
 
+    function drawAll() {
+      drawCanvas(0, 0, ctx.canvas.width, ctx.canvas.height, 'black');
+      drawBall('firebrick', 10);
+    }
 
+    setInterval(updateAll, 1000/framesPreSecond);
+
+    function updateAll () {
+      moveAll();
+      drawAll();
+    }
   }
 
 
-});
+}, false);
