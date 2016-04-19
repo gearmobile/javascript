@@ -14,15 +14,17 @@ document.addEventListener('DOMContentLoaded', function () {
     var ballSpeedY = 7;
     var framesPreSecond = 30;
 
-    var paddle_width = 100;
-    var paddle_height = 10;
+    var paddleWidth = 100;
+    var paddleHeight = 10;
 
     ctx.canvas.width = 800;
     ctx.canvas.height = 600;
 
     function updateMousePosition(event) {
-      var mouseX = event.clientX;
-      console.log(mouseX);
+
+      var canvasCoords = ctx.canvas.getBoundingClientRect();
+      var mouseX = event.clientX - canvasCoords.left;
+      var mouseY = event.clientY - canvasCoords.top;
     }
 
     // MOVE BALL
