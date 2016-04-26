@@ -1,9 +1,0 @@
-#baloon {
-  cursor: pointer;
-  text-transform: capitalize;
-}
-
-.fixed {
-  position: fixed;
-  color: red;
-}
