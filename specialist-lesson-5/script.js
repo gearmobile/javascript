@@ -13,9 +13,33 @@
 // nodeType - возвращает тип элемента
 // nodeValue - свойство имеется только у текстовго узла и возвращает сам текст этого узла
 
+// hasChildNodes()
+
+// у NODE_ELEMENT есть два идентичных свойства - nodeName и tagName.
+// у NODE_ELEMENT есть методы:
+
+// hasAttribute(attribute)
+// getAttribute(attribute)
+// addAttribute(attribute, value)
+// removeAttribute(attribute)
+
 
 
 window.addEventListener('DOMContentLoaded', function () {
     var a = document.links[0];
-    console.log(a);
+    var linkParent = a.parentNode;
+    var wrapper = linkParent.parentNode;
+    var wrapperChilds = wrapper.childNodes;
+
+    console.log(wrapperChilds[3].firstChild.firstChild.nodeValue+' '+wrapperChilds[3].firstChild.firstChild.nextSibling.firstChild.nodeValue+' '+wrapperChilds[3].firstChild.lastChild.nodeValue);
+    console.log(wrapper.textContent);
+
+    var second = wrapper.nextSibling;
+    while ( second && second.nodeType != 1 ) {
+        second = second.nextSibling;
+    }
+    console.log(second);
+    var secondParagraphs = second.getElementsByTagName('p');
+    console.log(secondParagraphs.length);
+    console.log(document.body.getElementsByTagName('p').length);
 });
