@@ -1,4 +1,12 @@
-button {
+#controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+#controls button {
+    margin: 0 2rem;
     cursor: pointer;
     text-transform: uppercase;
 }
