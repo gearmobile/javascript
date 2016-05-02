@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <title>Drag and Drop</title>
     <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
 <body>
-    <h2 id="status">application status</h2>
-    <h1 id="title">drop zone</h1>
+    <h2 id="dropStatus">application status</h2>
+    <h1 id="dropTitle">drop zone</h1>
     <div id="dropZone"></div>
     <div id="objectsZone">
         <div id="object1" class="objects" draggable="true">object 1</div>
@@ -15,7 +16,7 @@
         <div id="object3" class="objects" draggable="true">object 3</div>
     </div>
     <hr/>
-    <button type="button" id="button">get object data</button>
+    <button type="button" id="readDropZone">get object data</button>
     <script src="script.js"></script>
 </body>
 </html>
