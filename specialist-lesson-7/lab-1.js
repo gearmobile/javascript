@@ -11,10 +11,10 @@ window.addEventListener('DOMContentLoaded', function () {
         }
         if ( ul[0].style.display == 'block' ) {
             ul[0].style.display = '';
-            li.style.listStyleType = 'disc';
+            li.style.listStyleType = 'square';
         } else {
-            ul[0].style.display = 'block';
-            li.style.listStyleType = 'circle';
+            ul[0].style.display = 'block'; 
+            li.style.listStyleType = 'disc';
         }
         event.preventDefault();
     }
