@@ -1,0 +1,40 @@
+.flip {
+    width: 240px;
+    height: 200px;
+    margin: 10px;
+    float: left;
+}
+
+.flip > .flip__back,
+.flip > .flip__front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 200px;
+    backface-visibility: hidden;
+    border-radius: 7px;
+    position: absolute;
+    transition: transform 1s;
+    font: 700 20px/1 Arial, sans-serif;
+    text-transform: capitalize;
+}
+
+.flip > .flip__front {
+    transform: perspective(600px) rotateY(0deg);
+    background-color: yellowgreen;
+}
+
+.flip:hover > .flip__front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.flip > .flip__back {
+    transform: perspective(600px) rotateY(180deg);
+    background-color: cadetblue;
+}
+
+.flip:hover > .flip__back {
+    transform: perspective(600px) rotateY(0deg);
+}
+
