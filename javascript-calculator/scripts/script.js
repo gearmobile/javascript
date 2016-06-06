@@ -33,13 +33,45 @@ $(document).ready(function () {
 
     // POWER BUTTON
     calcPower.on('click', function () {
-        var current = calcDisplay.val() * 1;
-        typeof current;
+        calcDisplay.val( Math.pow( calcDisplay.val(), 3 ) );
     });
 
     // BACKSPACE BUTTON
-    calcSpace.on('click', function () {
-        //
+    calcSpace.on('click', function () { // http://www.w3schools.com/jsref/jsref_substring.asp
+        calcDisplay.val( calcDisplay.val().substring(0, calcDisplay.val().length-1) );
     });
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

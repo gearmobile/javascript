@@ -16,11 +16,12 @@ body {
 .calculator {
     width: 250px;
     height: 350px;
-    border: 1px solid black;
-    margin: 20px auto 0;
+    border: 2px solid black;
+    margin: 100px auto 0;
     text-align: center;
     background-color: yellowgreen;
     box-shadow: 0 0 30px grey;
+    border-radius: 4px;
 }
 
 .calculator__form {
@@ -42,6 +43,7 @@ body {
     text-align: right;
     font: 700 16px/1 Arial, sans-serif;
     color: darkslateblue;
+    background-color: whitesmoke;
 }
 
 .calculator__key {
@@ -60,6 +62,10 @@ body {
 .calculator__key:hover {
     background-color: yellow;
     font-weight: 700;
+}
+
+.calculator__key::-moz-focus-inner {
+    border: none
 }
 
 
