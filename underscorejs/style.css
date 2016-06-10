@@ -1,0 +1,14 @@
+button {
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+dl dt {
+    font-weight: 700;
+    color: seagreen;
+}
+
+dl dd {
+    font-style: italic;
+    color: dodgerblue;
+}

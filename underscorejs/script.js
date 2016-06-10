@@ -83,11 +83,124 @@ var r4 = _.zip( r1 , r2 , r3 );
 var names = [ 'Peter', 'Mary', 'John' ];
 var ages = [ 30, 20, 40 ];
 var peoples = _.object( names, ages );
-console.log(peoples);
 
 
 // МЕТОДЫ ДЛЯ РАБОТЫ С ФУНКЦИЯМИ
 // =======================================================================================
+
+// ПРИМЕР МЕТОДА .BIND
+// ----------------------------------------------------------------------------------------
+// подвязывает функцию к определенному объекту; вызов функции будет производиться только на этом объекте
+var someObj1 = {};
+someObj1.name = 'Peter';
+var someObj2 = {};
+someObj2.name = 'Mary';
+var greeting = function (el) {
+    console.log( el + ', ' + this.name );
+};
+var someObj3 = {};
+someObj3.name = 'John';
+
+greeting.apply( someObj1, ['Hello'] );
+greeting.apply( someObj2, ['Holla'] );
+
+var greetingBind = _.bind( greeting, someObj3 );
+greetingBind('Welcome');
+greetingBind('Chao');
+
+
+// ПРИМЕР МЕТОДА .MEMOIZE
+// ----------------------------------------------------------------------------------------
+//
+var calcSum = function (num) {
+    var result = 0;
+    for ( var i = 0; i < num; i++ ) {
+        result += i;
+    }
+    console.log( result );
+};
+var memSum = _.memoize(calcSum);
+
+// debounce
+// once
+// delay
+// after
+// before
+
+
+// МЕТОДЫ ДЛЯ РАБОТЫ С ОБЪЕКТАМИ
+// =======================================================================================
+
+// _.keys()
+// преобразует ключи объекта в массив
+var fruits = { apple: 10, melon: 20, potato: 30, tomato: 50 };
+var fruitSorts = _.keys( fruits );
+
+// _.values()
+// преобразует значения ключей объекта в массив
+var fruitsvalues = _.values( fruits );
+
+
+// _.pairs()
+// преобразует пары ключ-значение объекта в массив, состоящий из подмассивов
+var fruitsPairs = _.pairs( fruits );
+
+// _.invert()
+// инвертирует пару ключ:значение в объекте
+var fruitsInvert = _.invert( fruits );
+
+// _.pick()
+// вернет новый объект, в котором будут только указанные ключи
+var fruitsPicked = _.pick( fruits, [ 'melon', 'tomato' ] );
+
+// _.clone()
+// возвращает полную копию оригинального объекта
+var man = { weight: 80, age: 30, height: 180, gender: 'male' };
+var manDouble = _.clone( man );
+man.age = 32;
+manDouble.gender = 'female';
+console.log( man );
+console.log( manDouble );
+
+
+// УТИЛИТЫ
+// =======================================================================================
+
+// _.random()
+// возращает случайное число из диапазона min - max ( включительно нижнюю и верхнюю границы )
+var rnd = _.random( 0, 255 );
+
+// _.now()
+// возвращает текущее время
+var currTime = _.now();
+console.log( currTime );
+
+
+
+// TEMPLATE
+// =======================================================================================
+
+var users = [ 'Peter', 'Mary', 'John', 'Josef' ];
+var messages = [ 'Hello', 'Holla', 'Welcome', 'Greeting' ];
+var block;
+var compiled = _.template( "<dl class='info'><dt><%= name %></dt><dd><%= message %></dd></dl>" );
+
+function insertBlock () {
+    block = compiled({ name: users[ _.random( 0, users.length-1 ) ], message: messages[ _.random( 0, messages.length-1 ) ] });
+    document.querySelector('.canvas').innerHTML += block;
+}
+
+document.querySelector('#add').addEventListener('click', insertBlock, false);
+
+
+
+
+
+
+
+
+
+
 
 
 
