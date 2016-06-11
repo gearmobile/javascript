@@ -106,6 +106,7 @@ var r2 = [ '2-1', '2-2', '2-3' ];
 var r3 = [ '3-1', '3-2', '3-3' ];
 var r4 = _.zip( r1 , r2 , r3 );
 
+
 // ПРИМЕР МЕТОДА .OBJECT
 // ----------------------------------------------------------------------------------------
 // преобразует массивы в объект
@@ -133,7 +134,7 @@ someObj3.name = 'John';
 greeting.apply( someObj1, ['Hello'] );
 greeting.apply( someObj2, ['Holla'] );
 
-var greetingBind = _.bind( greeting, someObj3 );
+
 greetingBind('Welcome');
 greetingBind('Chao');
 
