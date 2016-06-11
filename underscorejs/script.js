@@ -44,6 +44,7 @@ var salaries = _.map( a2, function (el) { return el.sal } );
 var splitArr = _.partition( a3, function (el) { if ( el % 2 === 0 ) { return el } } );
 var splitSalary = _.partition( a2, function (el) { if ( el.sal < 4000 ) { return el } } );
 
+
 // ПРИМЕР МЕТОДА .SHUFFLE
 // ----------------------------------------------------------------------------------------
 // при каждом запуске изменяет в случайном порядке индекс элементов существующего массива
@@ -52,6 +53,34 @@ var shuffledArr = _.shuffle(a3);
 var shuffledArrObj = _.shuffle(a2);
 
 
+// ПРИМЕР МЕТОДА .FIND - метод для поиска элемента в коллекции
+// ----------------------------------------------------------------------------------------
+// находит первый элемент коллекции, который удовлетворяет условию
+var findExample = [ 1,2,3,4,5,6,7,8,9 ];
+var findResult = _.find( findExample, function (el) {
+    return el % 2 == 0;
+});
+
+
+// ПРИМЕР МЕТОДА .REDUCE
+// ----------------------------------------------------------------------------------------
+var reduceExample = [ 1,2,3,4,5,6,7,8 ];
+var reduceResult = _.reduce( reduceExample, function (memo, el) {
+    return memo + el;
+});
+
+
+// ПРИМЕР МЕТОДА .FILTER
+// ----------------------------------------------------------------------------------------
+var filterExample = [ 1,2,3,4,5,6,7,8,9 ];
+var filterResult = _.filter( filterExample, function (el) {
+    return el % 3 === 0
+});
+
+// ПРИМЕР МЕТОДА .PLUCK
+// ----------------------------------------------------------------------------------------
+var school = [ { name: 'Mary', age: 12 }, { name: 'John', age: 10 }, { name: 'Peter', age: 13 }, { name: 'David', age: 11 }, { name: 'George', age: 15 } ];
+var schoolNames = _.pluck( school, 'name');
 
 // МЕТОДЫ ДЛЯ РАБОТЫ С МАССИВАМИ
 // =======================================================================================
@@ -162,6 +191,12 @@ manDouble.gender = 'female';
 console.log( man );
 console.log( manDouble );
 
+// _.extend
+//
+var brick = { weight: 200, width: 250, height: 150, thickness: 100 };
+var color = { color: 'red' };
+var brickFull = _.extend( brick, color );
+
 
 // УТИЛИТЫ
 // =======================================================================================
@@ -174,6 +209,12 @@ var rnd = _.random( 0, 255 );
 // возвращает текущее время
 var currTime = _.now();
 console.log( currTime );
+
+// _.times()
+// Запускаем функцию на исполнение три раза:
+_.times(3, function () {
+    console.log( 'Holla!' );
+});
 
 
 
