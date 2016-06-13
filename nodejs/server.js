@@ -1,6 +1,12 @@
-var user = require('./user');
+var http = require('http');
 
-var john = new user.User('John');
-var peter = new user.User('Peter');
+var app = http.createServer(function ( request, response ) {
+    response.writeHead(200);
+    response.write( 'Hello from Node.js Server!' );
+    setTimeout( function () {
+        response.write('is done!');
+        response.end();
+    }, 2000 );
+}).listen(8080);
 
-john.hello(peter);
+console.log('Listening on port 8080 ...');
