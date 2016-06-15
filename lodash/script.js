@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function () {
     // https://lodash.com/docs#delay
     _.delay(function (text) {
         console.log(text);
-    }, 2000, 'hello' );
+    }, 2000, 'Hello World' );
 
 
     // _.once
@@ -20,7 +20,25 @@ window.addEventListener('DOMContentLoaded', function () {
         alert('Hello!');
     }
     var callMeOnce = _.once(iAmOnce);
-    document.querySelector('.button').addEventListener('click', callMeOnce, false);
+    document.querySelector('#once').addEventListener('click', callMeOnce, false);
+
+
+    // _.before - функция будет выполнена менее n-раз
+    // -----------------------------------------
+    // https://lodash.com/docs#before
+    var sayHello = function () {
+        console.log('Hello');
+    };
+    document.querySelector('#before').addEventListener('click', _.before(10, sayHello), false);
+
+    // _.after - функция будет выполнена n-раз или более
+    // -----------------------------------------
+    // https://lodash.com/docs#after
+    var sayAfter = function () {
+        console.log('After');
+    };
+    document.querySelector('#after').addEventListener('click', _.after(5, sayAfter), false);
+
 
 
 }, false);
@@ -45,4 +63,14 @@ $(document).ready( function () {
             callOnce();
         }
     });
+
+    // _.debounce
+    // -----------------------------------------
+    // https://lodash.com/docs#debounce
+    var callMe = function () {
+        alert('Call me after 2 second!')
+    };
+    $(window).on( 'resize', _.debounce( callMe, 2000 ) );
+
+
 });

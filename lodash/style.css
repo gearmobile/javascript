@@ -1,8 +1,20 @@
 .button {
     position: fixed;
     top: 20px;
-    right: 20px;
     cursor: pointer;
+}
+
+.button-once {
+    right: 20px;
+}
+
+.button-before {
+    left: 20px;
+}
+
+.button-after {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .block {
