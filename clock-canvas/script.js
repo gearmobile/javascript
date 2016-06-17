@@ -21,8 +21,8 @@ window.addEventListener( 'DOMContentLoaded', function () {
         // toLocaleString(Date) - get human readable local date
         // toLocaleTimeString(Date) - get human readable local hours
 
-        var today = now.toDateString(now);
-        var time = now.toLocaleTimeString(now);
+        var today = now.toDateString();
+        var time = now.toLocaleTimeString();
         var hours = now.getHours();
         var minutes = now.getMinutes();
         var seconds = now.getSeconds();
