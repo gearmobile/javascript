@@ -15,11 +15,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
     function renderTime () {
 
-        var now = new Date(); // create date
-
-        // toDateString(Date) - get human readable format date
-        // toLocaleString(Date) - get human readable local date
-        // toLocaleTimeString(Date) - get human readable local hours
+        var now = new Date();
 
         var today = now.toDateString(now);
         var time = now.toLocaleTimeString(now);
