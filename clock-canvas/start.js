@@ -15,14 +15,10 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
     function renderTime () {
 
-        var now = new Date(); // create date
+        var now = new Date();
 
-        // toDateString(Date) - get human readable format date
-        // toLocaleString(Date) - get human readable local date
-        // toLocaleTimeString(Date) - get human readable local hours
-
-        var today = now.toDateString();
-        var time = now.toLocaleTimeString();
+        var today = now.toDateString(now);
+        var time = now.toLocaleTimeString(now);
         var hours = now.getHours();
         var minutes = now.getMinutes();
         var seconds = now.getSeconds();
