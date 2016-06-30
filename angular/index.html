@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Angular</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <input type="text" ng-model='name'/>
+    <button ng-click='greetingShow=true' type="button">say hello</button>
+    <p ng-show='greetingShow'>Hello, {{name}}!</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
