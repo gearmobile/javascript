@@ -47,16 +47,18 @@ window.addEventListener( 'DOMContentLoaded', function () {
         var y = Math.floor( event.touches[0].pageY );
 
         if ( x1 < x && x < x1d && y1 < y && y < y1d ) {
-            arr.unshift( 4 );
+            arr.push( 4 );
         } else if ( x < x2 && x > x2d && y > y2 && y < y2d ) {
-            arr.unshift( 1 );
+            arr.push( 1 );
         } else if ( x < x3 && x > x3d && y < y3 && y > y3d ) {
-            arr.unshift( 2 );
+            arr.push( 2 );
         } else if ( x > x4 && x < x4d && y < y4 && y > y4d ) {
-            arr.unshift( 3 );
+            arr.push( 3 );
         } else {
             arr = [];
         }
+
+        console.log(arr);
 
         // CHECK MODAL WINDOW
         // ------------------------------------
@@ -65,8 +67,10 @@ window.addEventListener( 'DOMContentLoaded', function () {
             if ( arr.join(',') === arrTest.join(',') ) {
                 alert('Hello');
                 arr = [];
+                console.log(arr);
             } else {
                 arr = [];
+                console.log(arr);
             }
         }
 
