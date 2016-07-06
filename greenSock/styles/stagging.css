@@ -1,0 +1,50 @@
+*,*::before, *::after {
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: seashell;
+}
+
+.stagging {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+}
+
+.stagging__item,
+.stagger__item,
+.stagger__item--to,
+.stagger__item--fromto,
+.stagger__item--cycle {
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    text-transform: capitalize;
+}
+
+.stagging__item {
+    background-color: coral;
+}
+
+.stagger__item {
+    background-color: sandybrown;
+}
+
+.stagger__item--to {
+    background-color: orange;
+}
+
+.stagger__item--fromto {
+    background-color: seagreen;
+}
+
+.stagger__item--cycle {
+    background-color: aquamarine;
+}
