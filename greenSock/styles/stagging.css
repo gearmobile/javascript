@@ -18,10 +18,33 @@ body {
     padding: 20px;
 }
 
-.stagging__item {
+.stagging__item,
+.stagger__item,
+.stagger__item--to,
+.stagger__item--fromto,
+.stagger__item--cycle {
     text-align: center;
     padding: 20px;
     margin: 10px;
-    background-color: coral;
     text-transform: capitalize;
+}
+
+.stagging__item {
+    background-color: coral;
+}
+
+.stagger__item {
+    background-color: sandybrown;
+}
+
+.stagger__item--to {
+    background-color: orange;
+}
+
+.stagger__item--fromto {
+    background-color: seagreen;
+}
+
+.stagger__item--cycle {
+    background-color: aquamarine;
 }
