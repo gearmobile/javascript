@@ -10,5 +10,5 @@ window.addEventListener('DOMContentLoaded', function () {
     var leaderFromStr = JSON.parse( leaderStr );
 
     console.log( leaderFromStr );
-    
+
 }, false);
