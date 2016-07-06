@@ -1,8 +1,12 @@
 'use strict';
 
-var $ = require('jquery');
+var $ = require( 'jquery' );
+require('isotope-layout');
 
 $( document ).ready( function () {
+
+    // CLEAN JQUERY
+    // ---------------------------------------
 
     var gallery = $( '.gallery' );
     var galleryItems = gallery.find( '.gallery__item' );
@@ -15,11 +19,15 @@ $( document ).ready( function () {
     galleryButton.on( 'click', function ( event ) {
         event.preventDefault();
         // show next n items
-        galleryItems.filter(':hidden').slice( 0, galleryItemsToShow ).show();
+        galleryItems.filter( ':hidden' ).slice( 0, galleryItemsToShow ).show();
         // destroy button if nothing to show
-        if ( galleryItems.filter(':hidden').length === 0 ) {
+        if ( galleryItems.filter( ':hidden' ).length === 0 ) {
             galleryButton.css( 'display', 'none' );
         }
     });
+
+    // ISOTOPE JQUERY
+    // --------------------------------------------------
+    //
 
 });

@@ -1,6 +1,10 @@
 head: {
     defaults: {
-        title: 'default title',
+        title: 'Clean jQuery',
+        useSocialMetaTags: true
+    },
+    isotope: {
+        title: 'Isotope',
         useSocialMetaTags: true
     }
 }
