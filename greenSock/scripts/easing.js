@@ -10,10 +10,10 @@ window.addEventListener('DOMContentLoaded', function () {
     // Power3 - анимация происходит быстрее, чем Power2
     // Power4 - анимация происходит быстрее, чем Power3; это максимальная скорость анимации
 
-    TweenLite.from( list.children[0], 2, { x: -200, ease:Power0.easeNone } ); // стандартная анимация
-    TweenLite.from( list.children[1], 2, { x: 200, delay: 2, ease:Power1.easeIn } ); // анимационный эффект easeIn - анимация начинается с маленькой скоростью и заканивается на быстрой скорости
-    TweenLite.from( list.children[2], 2, { x: -300, delay: 4, ease:Power1.easeOut } ); // анимационный эффект easeOut - анимация начинается медленно и заканчивается быстро
-    TweenLite.from( list.children[3], 2, { x: 300, delay: 6, ease:Power2.easeOut } );
+    TweenLite.from( list.children[0], 2, { x: -200, ease: Power0.easeNone } ); // стандартная анимация
+    TweenLite.from( list.children[1], 2, { x: 200, delay: 2, ease: Power1.easeIn } ); // анимационный эффект easeIn - анимация начинается с маленькой скоростью и заканивается на быстрой скорости
+    TweenLite.from( list.children[2], 2, { x: -300, delay: 4, ease: Power1.easeOut } ); // анимационный эффект easeOut - анимация начинается медленно и заканчивается быстро
+    TweenLite.from( list.children[3], 2, { x: 300, delay: 6, ease: Power2.easeOut } );
 
     // easeIn, easeOut - стандартные easing-функции библиотеки TweenLite
     // имеется дополнительная библиотека EasePack, в которой представлен расширенный набор easing-функций, обладающий более богатым потенциалом
@@ -34,8 +34,8 @@ window.addEventListener('DOMContentLoaded', function () {
     // ShowMo - два параметра - контрольные точки, с помощью которых можно устанавливать крутизну графа движения
     // Rough - наибольшее количество параметров конфигурации, в частности - количество контрольных точек
 
-    TweenLite.from( list.children[8], 2, { x: -550, delay: 16, ease: SlowMo.ease.config( 0.5, 0.4, false) } );
-    TweenLite.from( list.children[9], 2, { x: 550, delay: 18, ease: SteppedEase.config(6) } );
+    TweenLite.from( list.children[8], 2, { x: -550, delay: 16, ease: SlowMo.ease.config( 0.5, 0.4, false ) } );
+    TweenLite.from( list.children[9], 2, { x: 550, delay: 18, ease: SteppedEase.config( 6 ) } );
     TweenLite.from( list.children[10], 2, { x: -600, delay: 20,  ease: RoughEase.ease.config({ template: Power0.easeNone, strength: 1, points: 10, taper: 'none', randomize: true, clamp: true }) } );
 
 
