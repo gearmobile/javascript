@@ -141,10 +141,12 @@ module.exports = {
         }
     },
 
+    // INCLUDE ISOTOPE
+    // ------------------------------------------
     resolve: {
         alias: {
             'masonry': 'masonry-layout',
-            'isotope': 'isotope-layout'
+                'isotope': 'isotope-layout'
         }
     },
 
