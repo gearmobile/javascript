@@ -43,23 +43,19 @@ $( document ).ready( function () {
         iso.arrange({ filter: event.target.getAttribute( 'data-filter' ) });
     });
 
-    // ISOTOPE BUTTON
+    // ISOTOPE BUTTON LOAD MORE
     // -----------------------------------------------------
     var isoBtn = document.querySelector( '.isotope-button' );
     var elementsNumber = 3;
     var numberRows = 0;
-    var classes = [ 'uno', 'duo', 'tre', 'quattro', 'cinque' ];
+    var gridItems = document.querySelectorAll('.isotope-grid__item');
 
     isoBtn.addEventListener( 'click', function () {
 
         var elems = [];
 
         for ( var i = 0; i < elementsNumber; i++ ) {
-            var randomClass = classes[ Math.floor( Math.random() * classes.length ) ];
-            var item = document.createElement( 'div' );
-            item.classList.add( 'isotope-grid__item' );
-            item.classList.add( randomClass );
-            item.innerHTML = randomClass;
+            var item = gridItems[ Math.floor( Math.random() * gridItems.length ) ].cloneNode( true );
             elems.push( item );
         }
 
@@ -68,6 +64,7 @@ $( document ).ready( function () {
 
         if ( numberRows >= 6 ) {
             document.querySelector( '.isotope-grid' ).style.marginBottom = 0;
+            isoBtn.onclick = null;
             isoBtn.style.display = 'none';
         }
 
