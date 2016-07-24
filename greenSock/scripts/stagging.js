@@ -43,6 +43,4 @@ window.addEventListener( 'DOMContentLoaded', function () {
         }, delayStagger )
         .staggerFrom( staggerItemsCycle, 0.8, { cycle: { x: [ 50, -50 ] }, ease: easingStagger }, delayStagger );
 
-
-
 }, false);
