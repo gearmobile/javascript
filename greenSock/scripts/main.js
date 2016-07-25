@@ -1,34 +1,29 @@
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener( 'DOMContentLoaded', function () {
 
-    var header = document.querySelector('#header');
-    var subHeader = document.querySelector('#subheader');
+    var header = document.querySelector( '#header' );
+    var subHeader = document.querySelector( '#subheader' );
     var listItemFirst = document.querySelector('.list').firstElementChild;
     var listItemSecond = document.querySelector('.list').children[1];
-    var listItemThird = document.querySelector('.list').children[2];
-    var listItemFourth = document.querySelector('.list').children[3];
-    var listItemFifth = document.querySelector('.list').children[4];
-    var listItemSixth = document.querySelector('.list').children[5];
-    var listItemLast = document.querySelector('.list').lastElementChild;
+    //var listItemLast = document.querySelector('.list').lastElementChild;
     var image = document.querySelector('#image');
 
-    // basic overview
+    // BASIC OVERVIEW
     // ------------------------------------------------------------
-    TweenLite.to( header, 1, { opacity: 0, y: 50 } );
-    TweenLite.to( subHeader, 1, { opacity: 0 } );
-    TweenLite.to( listItemFirst, 1, { opacity: 0, x: 100 } );
-    TweenLite.to( listItemSecond, 1, { opacity: 0, x: -100 } );
-    TweenLite.from( listItemThird, 1, { x: -300 } );
-    TweenLite.to( listItemLast, 1, { opacity: 0, x: 100 } );
+    TweenLite.to( header, 3, { opacity: 0, y: 100 } );
+    TweenLite.to( subHeader, 3, { y: -50, borderTopLeftRadius: 0, borderBottomRightRadius: 0, borderTopRightRadius: 40, borderBottomLeftRadius: 40, color: 'white', delay: 2 } );
+    TweenLite.to( listItemFirst, 2, { x: 100, backgroundColor: 'red' } );
+    TweenLite.to( listItemSecond, 2, { x: -100, backgroundColor: 'green' } );
+    TweenLite.to( image, 2, { width: 600, height: 200, opacity: .5 } );
 
-    // method to(), method fromTo(), method set()
+    // METHOD TO(), METHOD FROMTO(), METHOD SET()
     // -------------------------------------------------------------
-    TweenLite.to( image, 1, { width: 600, height: 200 } );
-    TweenLite.fromTo( listItemFourth, 3, { x: -200 }, { x: 200 } );
-    TweenLite.set( listItemFifth, { x: 200 } );
+    //TweenLite.from( listItemLast, 4, { x: -300, opacity: .5 } );
+    //TweenLite.fromTo( listItemFirst, 4, { x: -200 }, { x: 200, backgroundColor: 'green' } );
+    //TweenLite.set( listItemFirst, { x: 200 } );
 
-    // delay and autoAlpha
+    // DELAY AND AUTOALPHA
     // -------------------------------------------------------------
-    TweenLite.to( listItemSixth, 1, { autoAlpha: 0, delay: 3 } );
+    //TweenLite.to( listItemLast, 1, { autoAlpha: 0, delay: 3 } );
 
 
 }, false);

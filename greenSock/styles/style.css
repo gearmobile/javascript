@@ -4,6 +4,12 @@ ul, ol {
     margin: 0;
 }
 
+body {
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    background-color: floralwhite;
+}
+
 .wrapper {
     width: 90%;
     margin: auto;
@@ -13,20 +19,37 @@ ul, ol {
 
 #header {
     text-transform: capitalize;
-    font: 20px/1.2 Arial, sans-serif;
+    padding: 50px 20px;
+    background-color: cornflowerblue;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 34px;
+}
+
+#subheader {
+    text-transform: capitalize;
+    background-color: orchid;
+    padding: 40px 10px;
+    border-radius: 40px 0;
+    font-size: 28px;
 }
 
 .list {
     padding: 20px;
-    border: 1px solid #000;
+    border: 2px dashed deeppink;
     border-radius: 10px;
+    text-transform: capitalize;
 }
 
 .list__item {
     margin: 10px 0;
-    padding: 5px 0;
+    padding: 40px 0;
     background-color: sandybrown;
     text-transform: capitalize;
+    color: #000;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 10px;
 }
 
 #image {
