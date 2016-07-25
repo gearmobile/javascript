@@ -1,19 +1,21 @@
+// http://goo.gl/gNqpIo
 
 function equalHeight( items ) {
 
-    // max height value
+    // MAX HEIGHT VALUE
     var maxHeight = 0;
 
-    // get all list items
+    // GET ALL LIST ITEMS
     var listItems = document.querySelectorAll( items );
 
-    // get tallest list item value
+    // GET TALLEST LIST ITEM VALUE
     for ( var i = 0; i < listItems.length; i++ ) {
+        listItems[i].style.height = 'auto';
         var listItemHeight = listItems[i].offsetHeight;
         maxHeight = maxHeight < listItemHeight ? listItemHeight : maxHeight;
     }
 
-    // set height for all list items
+    // SET HEIGHT FOR ALL LIST ITEMS
     for ( var j = 0; j < listItems.length; j++ ) {
         listItems[j].style.height = maxHeight + 'px';
     }
@@ -21,4 +23,6 @@ function equalHeight( items ) {
 }
 
 window.addEventListener( 'load', equalHeight( '.list__item' ), false );
-window.addEventListener( 'resize', equalHeight( '.list__item' ), false );
+window.addEventListener( 'resize', function () {
+    equalHeight( '.list__item' );
+}, false );
