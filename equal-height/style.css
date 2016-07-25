@@ -25,3 +25,21 @@
     padding: 1rem;
     background-color: orangered;
 }
+
+@media screen and ( max-width: 980px ) {
+    .list__item {
+        width: 33.333333333%;
+    }
+}
+
+@media screen and ( max-width: 768px ) {
+    .list__item {
+        width: 50%;
+    }
+}
+
+@media screen and ( max-width: 600px ) {
+    .list__item {
+        width: 100%;
+    }
+}
