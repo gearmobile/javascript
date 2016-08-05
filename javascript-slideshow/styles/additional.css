@@ -1,0 +1,75 @@
+
+/* SLIDE
+------------------------------------------------- */
+.slide {
+    border: 3px solid salmon;
+}
+
+
+/* SLIDE ITEM
+------------------------------------------------- */
+.slide__item {
+    font: 700 60px/1.4 'Montserrat', sans-serif;
+}
+
+.slide__item:nth-child(1) {
+    background: red url( '../images/sample-image-01.png' ) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.slide__item:nth-child(2) {
+    background: orange url( '../images/sample-image-02.png' ) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.slide__item:nth-child(3) {
+    background: green url( '../images/sample-image-03.png' ) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.slide__item:nth-child(4) {
+    background: blue url( '../images/sample-image-04.png' ) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.slide__item:nth-child(5) {
+    background: purple url( '../images/sample-image-05.png' ) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.slide__item span {
+    padding: 10px 50px;
+    background-color: rgba( 255, 255, 255, 0.8 );
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    color: firebrick;
+}
+
+/* SLIDE CONTROL
+------------------------------------------------- */
+
+.slide__control {
+    display: none;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.slide__button {
+    margin: 0 10px;
+    padding: 20px 40px;
+    border: 3px solid #eee;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #eee;
+    letter-spacing: 1px;
+    background-color: #333;
+    cursor: pointer;
+    transition: background-color .2s, color .2s, border-color .2s;
+}
+
+.slide__button:hover {
+    background-color: #eee;
+    color: #333;
+    border-color: firebrick;
+}
