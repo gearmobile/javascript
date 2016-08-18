@@ -16,4 +16,14 @@ window.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-}, false);
+}, false );
+
+window.addEventListener( 'load', function () {
+    //
+}, false );
+
+if (true) {
+
+} else {
+    
+}
