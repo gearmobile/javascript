@@ -1,14 +1,18 @@
  window.addEventListener( 'load', function () {
+
     // variables
     // -----------------------------------------------
-    var location1 = 3;
-    var location2 = 4;
-    var location3 = 5;
+
+    var location1 = Math.floor( Math.random() * 5 );
+    var location2 = location1 + 1;
+    var location3 = location2 + 1;
+    console.log( location1, location2, location3 );
     var guess = null;
     var hits = 0;
     var guesses = 0;
     var isSunk = false;
     var statistica = null;
+
     // -----------------------------------------------
     // logic
     // -----------------------------------------------
