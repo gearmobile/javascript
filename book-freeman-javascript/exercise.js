@@ -77,4 +77,87 @@ function doggy ( argument1, argument2 ) {
     }
 }
 
-doggy( 19, 'Snoopy' );
+doggy( 20, 'juno' );
+doggy( -1, 'scottie' );
+doggy( 0, 'dino', 0 );
+doggy( '20', 'fido' );
+doggy( 10, 'lady' );
+doggy( 21, 'bruno' );
+
+// -------------------------------------------------------------
+
+function whatShallWear ( temp ) {
+    if ( temp < 60 ) {
+        console.log( 'Wear a jacket' );
+    } else if ( temp < 70 ) {
+        console.log( 'Wear a sweater' );
+    } else {
+        console.log( 'Wear a t-shirt' );
+    }
+}
+
+var student = 'new';
+var stage = ( student === 'necomer' );
+
+whatShallWear( 50 );
+whatShallWear( 80 );
+whatShallWear( 60 );
+
+console.log( stage );
+
+// --------------------------------------------------------------
+
+function doIt ( param ) {
+    param = 2;
+}
+
+var test = 1;
+doIt( test );
+console.log( test );
+
+// ---------------------------------------------------------------
+
+function speak ( kind ) {
+    var speakDefault = '';
+    if ( kind === 'dog' ) {
+        console.log( 'woof' );
+    } else if ( kind === 'cat' ) {
+        console.log( 'meow' );
+    } else {
+        console.log( speakDefault );
+    }
+}
+
+var pet = prompt(  'Enter type of your pet: ' );
+
+speak( pet );
+
+// ---------------------------------------------------------------
+
+function secret () {
+    console.log( 'The secret of life is 42' );
+}
+
+secret();
+
+// ---------------------------------------------------------------
+
+function makeTea ( cups, tea ) {
+    console.log( 'Brewing ' + cups + ' cups of ' + tea );
+}
+
+var guests = 3;
+
+makeTea( guests, 'Earl Grey' );
+
+// ---------------------------------------------------------------
+
+function dogYears ( name, age ) {
+    var years = age * 7;
+    console.log( name + ' is ' + years + ' years old' );
+}
+
+var myDog = 'Fido';
+dogYears( myDog, 4 );
+
+// ---------------------------------------------------------------
