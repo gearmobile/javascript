@@ -152,7 +152,7 @@ makeTea( guests, 'Earl Grey' );
 
 // ---------------------------------------------------------------
 
-function dogYears ( name, age ) {
+function dogYears( name, age ) {
     var years = age * 7;
     console.log( name + ' is ' + years + ' years old' );
 }

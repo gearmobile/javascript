@@ -4,37 +4,36 @@
 
 // ---------------------------------------------------------
 
-var clunkCounter;
+let clunkCounter;
 
-function display ( output ) {
+function display( output ) {
     console.log( output );
     clunkCounter++;
 }
 
-function clunk ( times ) {
-    var num = times;
+function clunk( times ) {
+    let num = times;
     while ( num > 0 ) {
-        display('clunk');
+        display( 'clunk' );
         num--;
     }
 }
 
-function amaj ( size ) {
-    var facky = 1;
+function amaj( size ) {
+    let facky = 1;
     clunkCounter = 0;
     if ( size === 0 ) {
-        display('clunk');
+        display( 'clunk' );
     } else if ( size === 1 ) {
-        display('thunk');
+        display( 'thunk' );
     } else {
         while ( size > 1 ) {
-            facky = facky * size;
+            facky *= size;
             size--;
         }
-        clunk(facky);
+        clunk( facky );
     }
 }
-
 
 amaj( 5 );
 console.log( clunkCounter );
@@ -48,30 +47,3 @@ amaj( 1 );
 console.log( clunkCounter );
 amaj( 0 );
 console.log( clunkCounter );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ---------------------------------------------------------

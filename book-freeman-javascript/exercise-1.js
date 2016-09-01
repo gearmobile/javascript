@@ -4,16 +4,16 @@
 
 // ---------------------------------------------------------------
 
-var avatar = 'generic';
-var skills = 1.0;
-var pointsPerLevel = 1000;
-var userPoints = 2008;
+let avatar = 'generic';
+const skills = 1.0;
+const pointsPerLevel = 1000;
+let userPoints = 2008;
 
 console.log( 'Variable avatar before: ' + avatar );
 console.log( 'Variable userPoints before: ' + userPoints );
 
-function getAvatar ( points ) {
-    var level = points / pointsPerLevel ;
+function getAvatar( points ) {
+    const level = points / pointsPerLevel;
     if ( level === 0 ) {
         return 'Teddy Bear';
     } else if ( level === 1 ) {
@@ -26,13 +26,13 @@ function getAvatar ( points ) {
 avatar = getAvatar( 2112 );
 console.log( 'Variable avatar after: ' + avatar );
 
-function updatePoints ( bonus, newPoints ) {
-    var i = 0;
+function updatePoints( bonus, newPoints ) {
+    let i = 0;
     while ( i < bonus ) {
-        newPoints = newPoints + skills * bonus ;
+        newPoints = newPoints + skills * bonus;
         i++;
     }
-    return newPoints + userPoints
+    return newPoints + userPoints;
 }
 
 userPoints = updatePoints( 2, 100 );
@@ -40,60 +40,36 @@ console.log( 'Variable userPoints after: ' + userPoints );
 
 // -----------------------------------------------------------------
 
-var x = 32;
-var y = 44;
-var radius = 5;
+const x = 32;
+const y = 44;
+const radius = 5;
 
-var centerX = 0;
-var centerY = 0;
-var width = 600;
-var height = 400;
+let centerX = 0;
+let centerY = 0;
+const width = 600;
+const height = 400;
 
-function setup ( width, height ) {
-    centerX = width / 2;
-    centerY = height / 2;
+function setup( parameter1, parameter2 ) {
+    centerX = parameter1 / 2;
+    centerY = parameter2 / 2;
 }
 
-function computeDistance ( x1, x2, y1, y2 ) {
-    var dx = x1 - x2;
-    var dy = y1 - y2;
-    var d2 = ( dx * dx ) + ( dy * dy );
-    var d = Math.sqrt( d2 );
-    return d;
+function computeDistance( x1, x2, y1, y2 ) {
+    const dx = x1 - x2;
+    const dy = y1 - y2;
+    const d2 = ( dx * dx ) + ( dy * dy );
+    return Math.sqrt( d2 );
 }
 
-function circleArea ( radius ) {
-    var area = Math.PI * radius * radius;
-    return area;
+function circleArea( parameter ) {
+    return Math.PI * parameter * parameter;
 }
 
 setup( width, height );
-var area = circleArea( radius );
-var distance = computeDistance( x, centerX, y, centerY );
+const area = circleArea( radius );
+const distance = computeDistance( x, centerX, y, centerY );
 
 console.log( 'Global variable area is ' + area );
 console.log( 'Global variable distance is ' + distance );
 
 // -------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
