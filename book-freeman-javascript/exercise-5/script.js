@@ -42,24 +42,21 @@ window.addEventListener( 'load', function () {
         return arr;
     }
 
-    // GET SMALLEST VALUE OF ARRAY
-    function smallestValue( param, param1 ) {
-        let value = param[0];
-        let index = 0;
-        for ( let i = 0; i < param.length; i++ ) {
-            if ( param[i] < value ) {
-                value = param[i];
-                index = i;
+    function foo( param ) {
+        const indexes = indexOfHighestValue( param );
+        let startItem = indexes[0];
+        for ( let i = 0; i < indexes.length; i++ ) {
+            if ( indexes[i] < startItem ) {
+                startItem = indexes[i];
             }
         }
-        console.log( 'Index #' + index + ' is equal ' + value + ' and it\'s most effective' );
-        console.log( 'Index #' + index + ' is equal ' + param1[index] );
+        return startItem;
     }
 
     allValues( scores );
     console.log( 'Total value of test is ' + totalValueOfTest( scores ) );
     console.log( 'Highest score value is ' + highestScore( scores ) );
     console.log( 'Indexes of highest values are: ' + indexOfHighestValue( scores ) );
-    smallestValue( costs, scores );
+    console.log( 'Result ' + foo( scores ) );
 
 }, false );
