@@ -9,7 +9,7 @@ let fido = {
     loves: 'walks'
 };
 
-function loseWeight ( param1, param2 ) {
+function loseWeight( param1, param2 ) {
     param1.weight -= param2;
 }
 
