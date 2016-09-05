@@ -65,14 +65,13 @@ let eightBall = {
     index: 0,
     advice: [ 'yes', 'no', 'maybe', 'not a chance' ],
     shake: function () {
-        this.index += 1;
+        this.index = this.index + 1;
         if ( this.index >= this.advice.length ) {
             this.index = 0;
-            console.log( this.index );
         }
     },
     look: function () {
-        return this.advice[ this.index ];
+        console.log( this.advice[ this.index ] );
     }
 };
 
