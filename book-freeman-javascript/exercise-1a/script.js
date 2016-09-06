@@ -45,11 +45,77 @@ function golfScore( par, strokes ) {
 
 window.addEventListener( 'DOMContentLoaded', function () {
 
-    //console.log(orderMyLogic(4));
-    //console.log(orderMyLogic(6));
-    //console.log(orderMyLogic(11));
-
     console.log( golfScore( 4, 7 ) );
     console.log( golfScore( 5, 9 ) );
 
 }, false);
+
+function caseInSwitch( val ) {
+    let answer;
+    switch ( val ) {
+        case 1:
+            answer = 'alpha';
+            break;
+        case 2:
+            answer = 'beta';
+            break;
+        case 3:
+            answer = 'gamma';
+            break;
+        case 4:
+            answer = 'delta';
+            break;
+        default:
+            answer = 'Nothing to choose';
+    }
+    return answer;
+}
+
+console.log( caseInSwitch(1) );
+
+function switchOfStuff( val ) {
+    var answer;
+    switch ( val ) {
+        case 'a':
+            answer = 'apple';
+            break;
+        case 'b':
+            answer = 'bird';
+            break;
+        case 'c':
+            answer = 'cat';
+            break;
+        default:
+            answer = 'stuff';
+    }
+    return answer;
+}
+
+console.log( switchOfStuff(1) );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
