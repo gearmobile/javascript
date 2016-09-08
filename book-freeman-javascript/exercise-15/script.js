@@ -29,7 +29,7 @@ let fiat2 = {
 
 let lot = [ chevy, taxi, fiat1, fiat2 ];
 
-let loc1 = findCar( chevy );
-let loc2 = findCar( taxi );
-let loc3 = findCar( fiat1 );
-let loc4 = findCar( fiat2 );
+console.log( findCar( chevy ) );
+console.log( findCar( taxi ) );
+console.log( findCar( fiat1 ) );
+console.log( findCar( fiat2 ) );
