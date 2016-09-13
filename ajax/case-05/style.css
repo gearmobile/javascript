@@ -1,0 +1,46 @@
+*,*::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.request {
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.field {
+    border: 2px solid firebrick;
+    background-color: seashell;
+    max-width: 400px;
+    min-height: 600px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin: 20px auto 0;
+    padding: 20px;
+}
+
+.field p {
+    margin: 0 0 10px;
+    text-transform: capitalize;
+}
+
+.loader {
+    color: tomato;
+    padding: 20px;
+    border: 3px solid #789;
+    max-width: 200px;
+    min-height: 50px;
+    margin: 20px 0 0 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.loader.is-show {
+    display: block;
+}
+
+.loader.is-hide {
+    display: none;
+}
