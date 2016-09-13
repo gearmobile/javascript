@@ -12,6 +12,7 @@ body {
 #boardMessage {
     min-width: 160px;
     min-height: 50px;
+    padding: 6px 20px;
     position: absolute;
     top: 0;
     left: 0;

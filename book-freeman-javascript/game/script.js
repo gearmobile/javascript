@@ -4,53 +4,43 @@ window.addEventListener( 'load', function () {
     let cells = document.getElementsByTagName( 'td' );
     let input = document.querySelector( '#input' );
     let fire = document.querySelector( '#fire' );
-    let coords = null;
 
+    // view
     let view = {
         displayMessage: function ( param ) {
             output.innerHTML = param;
         },
         displayHits: function ( param ) {
-            for ( let i = 0; i < cells.length; i++ ) {
-                if ( param === cells[i].getAttribute( 'id' ).toLowerCase() ) {
-                    cells[i].classList.add( 'hit' );
-                }
-            }
+            document.getElementById( param ).setAttribute( 'class', 'hit' );
         },
         displayMiss: function ( param ) {
-            for ( let i = 0; i < cells.length; i++ ) {
-                if ( param === cells[i].getAttribute( 'id' ).toLowerCase() ) {
-                    cells[i].classList.add( 'miss' );
-                }
-            }
+            document.getElementById( param ).setAttribute( 'class', 'miss' );
         }
     };
 
-    view.displayMessage( 'hit' );
-    // view.displayHits( coords );
-    // view.displayMiss( coords );
-
-    function getLocation() {
-        fire.addEventListener( 'click', function () {
-            let location = input.value.split('');
-            if ( location[0].toUpperCase() === 'A' ) {
-                location[0] = '0';
-            } else if ( location[0].toUpperCase() === 'B' ) {
-                location[0] = '1';
-            } else if ( location[0].toUpperCase() === 'C' ) {
-                location[0] = '2';
-            } else if ( location[0].toUpperCase() === 'D' ) {
-                location[0] = '3';
-            } else if ( location[0].toUpperCase() === 'E' ) {
-                location[0] = '4';
-            } else if ( location[0].toUpperCase() === 'F' ) {
-                location[0] = '5';
-            } else {
-                return false;
+    // model
+    let model = {
+        boardSize: 7,
+        numShips: 3,
+        shipLength: 3,
+        shipsSunk: 0,
+        ships: [
+            { locations: [ '05', '15', '25' ], hits: [ '', '', '' ] },
+            { locations: [ '24', '34', '44' ], hits: [ '', '', '' ] },
+            { locations: [ '10', '11', '12' ], hits: [ '', '', '' ] }
+        ],
+        fire: function ( coords ) {
+            for ( let i = 0; i < this.numShips; i++ ) {
+                let ship = this.ships[i];
+                let index = ship.locations.indexOf( coords );
+                if ( index >= 0 ) {
+                    ship.hits[ index ] = 'hit';
+                    return true;
+                }
             }
-            return location.join('');
-        }, false );
-    }
+            return false;
+        }
+    };
 
 
 }, false );
