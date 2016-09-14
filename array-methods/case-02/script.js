@@ -7,4 +7,5 @@ window.addEventListener( 'DOMContentLoaded', function () {
     console.log( '------------------------' );
     console.log( arrShort );
     console.log( '------------------------' );
+    console.log( [ 'Маша', 'Петя', 'Марина', 'Василий', 10 ].join(' ') );
 }, false);

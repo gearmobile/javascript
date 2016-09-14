@@ -1,7 +1,3 @@
-/**
- * Created by gearmoile on 9/4/16.
- */
-
 let chevy = {
     make: 'Chevrolet',
     model: 'Aveo',
@@ -45,13 +41,13 @@ let song = {
     play: function () {
         if ( !this.playing ) {
             this.playing = true;
-            console.log( 'Playing ' + this.name + ' by ' + this.artist + '.' );
+            console.log( ['Playing', this.name, 'by', this.artist, '.'].join(' ') );
         }
     },
     pause: function () {
         if ( this.playing ) {
             this.playing = false;
-            console.log( 'Stop playing ' + this.name + ' by ' + this.artist + '.' );
+            console.log( [ 'Stop playing', this.name, 'by', this.artist, '.' ].join(' ') );
         }
     }
 };
