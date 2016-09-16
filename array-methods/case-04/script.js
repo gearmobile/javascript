@@ -77,31 +77,32 @@ window.addEventListener( 'DOMContentLoaded', function () {
     //
     // dvz example
     //
-    function compare(first, second) {
-        let idx = second.toLowerCase().split('').reduce((result, letter) => {
-            result[letter] = true;
+    function compareMore( first, second ) {
+        let idx = second.toLowerCase().split('').reduce( ( result, letter ) => {
+            result[ letter ] = true;
             return result;
-        }, {});
+        }, {} );
         let check = first.toLowerCase();
-        for (let i = 0; i < check.length; i++) {
-            if (!idx[check[i]]) return false;
+        for ( let i = 0; i < check.length; i++ ) {
+            if ( !idx[ check[ i ] ] ) return false;
         }
         return true;
     }
-    //
     //
     // если все буквы первой строки должны найтись ровно один раз во второй
-    function compare(first, second) {
-        let idx = second.toLowerCase().split('').reduce((result, letter) => {
-            result[letter] = (result[letter] || 0) + 1;
+    //
+    function compareOnce( first, second ) {
+        let idx = second.toLowerCase().split('').reduce(( result, letter ) => {
+            result[ letter ] = ( result[ letter ] || 0 ) + 1;
             return result;
         }, {});
         let check = first.toLowerCase();
-        for (let i = 0; i < check.length; i++) {
-            if (idx[check[i]] !== 1) return false;
+        for ( let i = 0; i < check.length; i++ ) {
+            if ( idx[ check[i] ] !== 1 ) return false;
         }
         return true;
     }
+    //
 }, false);
 
 
