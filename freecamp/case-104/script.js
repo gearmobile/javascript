@@ -26,15 +26,51 @@ window.addEventListener( 'load', function () {
             likes: [ 'Javascript', 'Gaming', 'Foxes' ]
         }
     ];
-
-
-    function lookUpProfile( object ){
-        for ( let i = 0; i < object.length; i++ ) {
-            return object[i];
+    function lookUpProfile( value, key ){
+        let test = value.toString().toLowerCase();
+        let names = {};
+        let keys = {};
+        for ( let i = 0; i < contacts.length; i++ ) {
+            names[ contacts[i]['firstName'].toLowerCase() ] = true;
         }
+        if ( !names[ test ] ) return 'no such contact';
     }
-    console.log( lookUpProfile( contacts ) );
-     // Change these values to test your function
-    lookUpProfile( 'Akira', 'likes' );
+    console.log( lookUpProfile( 'Akira' ) );
+    console.log( lookUpProfile( 'Harry' ) );
+    console.log( lookUpProfile( 'Sherlock' ) );
+    console.log( lookUpProfile( 'Kristian' ) );
+    console.log( lookUpProfile( 'Kristan' ) );
     // -------------------------------------------------------
 }, false );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
