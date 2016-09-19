@@ -2,10 +2,10 @@ window.addEventListener( 'load', function () {
     // -------------------------------------------------------
     var contacts = [
         {
-            'firstName': 'Akira',
-            'lastName': 'Laine',
-            'number': '0543236543',
-            'likes': [ 'Pizza', 'Coding', 'Brownie Points' ]
+            firstName: 'Akira',
+            lastName: 'Laine',
+            number: '0543236543',
+            likes: [ 'Pizza', 'Coding', 'Brownie Points' ]
         },
         {
             'firstName': 'Harry',
@@ -28,10 +28,53 @@ window.addEventListener( 'load', function () {
     ];
 
 
-    function lookUpProfile( firstName, prop ){
-        //
+    function lookUpProfile( value, key ){
+        let test = value.toString().toLowerCase();
+        let names = {};
+        let keys = {};
+        for ( let i = 0; i < contacts.length; i++ ) {
+            names[ contacts[i]['firstName'].toLowerCase() ] = true;
+            //keys[ contacts[i]['likes'] ] = true;
+        }
+        if ( !names[ test ] ) return 'no such contact';
+        console.log( keys );
     }
-     // Change these values to test your function
-    lookUpProfile( 'Akira', 'likes' );
+    console.log( lookUpProfile( 'Akira' ) );
+    console.log( lookUpProfile( 'Harry' ) );
+    console.log( lookUpProfile( 'Sherlock' ) );
+    console.log( lookUpProfile( 'Kristian' ) );
+    console.log( lookUpProfile( 'Kristan' ) );
     // -------------------------------------------------------
 }, false );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
