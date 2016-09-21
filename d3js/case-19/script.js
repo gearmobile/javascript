@@ -6,11 +6,11 @@ window.addEventListener( 'load', function () {
     let data = [];
     const count = 10;
     //
-    function getRandom ( min, max ) {
+    function getRandom( min, max ) {
         return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
     }
     //
-    function Circle ( x, y, r ) {
+    function Circle( x, y, r ) {
         this.x = x;
         this.y = y;
         this.r = r;

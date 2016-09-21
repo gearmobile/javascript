@@ -1,0 +1,11 @@
+.graph-bar {
+    fill: steelblue;
+}
+
+.graph-text {
+    font-size: 10px;
+    fill: #fff;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-anchor: middle;
+    alignment-baseline: before-edge;
+}

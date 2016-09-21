@@ -3,6 +3,7 @@ window.addEventListener( 'load', function () {
     let barWidth = 20;
     let barPadding = 3;
     let maxValue = d3.max( data );
+    //
     let mainGroup = d3.select( 'body' )
         .append( 'svg' )
         .attr({ width: 1000, height: 250 })
@@ -20,13 +21,17 @@ window.addEventListener( 'load', function () {
         return 'translate(' + xloc( d, i ) + ',' + yloc( d ) + ')';
     }
     //
-    mainGroup.selectAll( 'rect' ).data( data ).enter().append( 'rect' ).attr({
-        fill: 'steelblue',
-        transform: translator,
-        width: barWidth,
-        height: function ( d ) {
-            return d;
-        }
+    mainGroup
+        .selectAll( 'rect' )
+        .data( data )
+        .enter()
+        .append( 'rect' ).attr({
+            fill: 'steelblue',
+            transform: translator,
+            width: barWidth,
+            height: function ( d ) {
+                return d;
+            }
     });
 }, false );
 
