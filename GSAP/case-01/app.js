@@ -1,8 +1,8 @@
 window.addEventListener( 'load', function () {
     //
     let delay = 1;
-    let imageOne = document.querySelector( '#image-one' );
-    let imageTwo = document.querySelector( '#image-two' );
+    let imageOne = document.querySelector( '#box-item-one' );
+    let imageTwo = document.querySelector( '#box-item-two' );
     //
     function imageFuncReverse( object ) {
         if ( object ) {
@@ -11,15 +11,15 @@ window.addEventListener( 'load', function () {
     }
     //
     function imageOneFunc() {
-        TweenLite.to( imageOne, 1, { delay: delay, x: 200, y: 200, scale: 1.4, onComplete: imageFuncReverse, onCompleteParams: [ imageOne ] } );
+        TweenLite.to( imageOne, 1, { delay: delay, x: 1000, y: -100, scale: 1.4, onComplete: imageFuncReverse, onCompleteParams: [ imageOne ] } );
     }
     //
     function imageTwoFunc() {
-        TweenLite.to( imageTwo, 2, { delay: delay, x: 400, y: 200, rotation: 180, alpha: 0.6 } );
+        TweenLite.to( imageTwo, 2, { delay: delay, x: 100, y: 200, rotation: 180, alpha: 0.6 } );
     }
     //
     imageOneFunc();
-    // imageTwoFunc();
+     //imageTwoFunc();
 }, false );
 
 

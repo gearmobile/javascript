@@ -33,7 +33,7 @@ body {
 .box {
     padding: 10px;
     position: absolute;
-    width: 1000px;
+    width: 1400px;
     min-height: 560px;
     top: 1%;
     left: 1%;
@@ -54,11 +54,11 @@ body {
     align-items: center;
     font-size: 40px;
     border: 4px solid green;
-    transition: background-color .2s;
-    position: relative; /* !! */
+    transition: background-color .2s, color .2s;
+    position: relative; /* ! draggable ! */
 }
 
-.box-item:focus,
 .box-item:active {
     background-color: forestgreen;
+    color: antiquewhite;
 }
