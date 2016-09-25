@@ -10,7 +10,6 @@ window.addEventListener( 'load', function () {
     let boxItemTwo = document.querySelector( '#box-item-two' );
     let boxItemThree = document.querySelector( '#box-item-three' );
     let boxItemFour = document.querySelector( '#box-item-four' );
-    let box = document.querySelector( '#box' );
     //
     let mainTitle = document.querySelector( '.slogan-title' );
     let introTitle = document.querySelector( '.intro-title' );
@@ -24,20 +23,22 @@ window.addEventListener( 'load', function () {
     let distanceX = 200;
     //
     //
-    tl.to( boxItemOne, duration, { x: distanceX, ease: Power1.easeOut } );
-    tl.to( boxItemTwo, duration, { x: distanceX, ease: Back.easeOut.config( 1.7 ) } );
-    tl.to( boxItemThree, duration, { x: distanceX, ease: Elastic.easeOut.config( 1, 0.3 ) } );
-    tl.to( boxItemFour, duration, { x: distanceX, ease: Bounce.easeOut } );
+    tl
+        .to( boxItemOne, duration, { x: distanceX, ease: Power1.easeOut } )
+        .to( boxItemTwo, duration, { x: distanceX, ease: Back.easeOut.config( 1.7 ) } )
+        .to( boxItemThree, duration, { x: distanceX, ease: Elastic.easeOut.config( 1, 0.3 ) } )
+        .to( boxItemFour, duration, { x: distanceX, ease: Bounce.easeOut } );
     //
-    // stagger elements
-    tlStagger.staggerTo( '.box-item', duration, { x: distanceX, ease: Bounce.easeOut }, delay );
+    // STAGGER ELEMENTS
+    tlStagger
+        .staggerTo( '.box-item', duration, { x: distanceX, backgroundColor: 'green', color: 'white', ease: Bounce.easeOut }, delay );
     //
     //
-    tlTwo.from( mainTitle, duration, { opacity: 0, scale: 25, ease: Linear.easeInOut } );
-    tlTwo.from( introTitle, duration, { opacity: 0, scale: 20, ease: Linear.easeInOut }, delay );
-    tlTwo.to( ball, duration, { left: 80, ease: Back.easeOut } );
-    tlTwo.to( mainTitle, duration, { x: 100, ease: Back.easeInOut }, ( delay + 1.1 ) );
-    // tlTwo.to( mainTitle, duration, { x: 0, ease: Back.easeInOut }, ( delay + 1.1 ) );
+    tlTwo
+        .from( mainTitle, duration, { opacity: 0, scale: 25, ease: Linear.easeInOut } )
+        .from( introTitle, duration, { opacity: 0, scale: 20, ease: Linear.easeInOut }, delay )
+        .to( ball, (duration + 0.8 ), { left: 80, rotation: 360, ease: Back.easeOut }, ( delay + 1 ) )
+        .to( mainTitle, duration, { x: 100, ease: Back.easeInOut } );
     //
     //
     startBtn.addEventListener( 'click', function () {
