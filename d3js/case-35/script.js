@@ -18,16 +18,16 @@ window.addEventListener( 'load', function () {
     //
     let axisGroup = svg.append( 'g' )
         .classed( 'axis-group', true )
-        .attr( 'transform', 'translate(50,0)' ); // move to right
+        .attr( 'transform', 'translate( 50, 0 )' ); // move to right
     //
     let axis = d3.svg
         .axis()
-        .orient('left')
+        .orient('left') // labels and ticks on the left side of the axis
         .scale( value );
     //
     let axisNodes = axisGroup.call( axis );
     //
-    let domain = axisNodes.selectAll('.domain');
+    let domain = axisNodes.selectAll( '.domain' );
     //
     domain.attr({
         'fill': 'none',
@@ -35,7 +35,7 @@ window.addEventListener( 'load', function () {
         'stroke': 'black'
     });
     //
-    let ticks = axisNodes.selectAll('.tick line');
+    let ticks = axisNodes.selectAll( '.tick line' );
     ticks.attr({
         'fill': 'none',
         'stroke-width': 1,
