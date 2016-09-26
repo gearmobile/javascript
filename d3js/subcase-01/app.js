@@ -29,6 +29,9 @@ window.addEventListener( 'DOMContentLoaded', function () {
     let minMaxValueComplex = d3.extent( complexArray, function ( d ) {
         return d.value;
     });
+    let simpleArrayRange = d3.range( 0, simpleArray.length );
+    console.log( 'Range is ' + simpleArrayRange );
+    console.log('-------------------------------');
     console.log( minValueComplex, maxValueComplex, minMaxValueComplex );
     console.log('-------------------------------');
     let filterValue = simpleArray.filter( function ( item ) {
@@ -44,7 +47,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
         return {
             donut: item.key,
             qty: item.value
-        }
+        };
     });
     console.log( remappedArray );
     remappedArray.forEach( function ( item ) {
