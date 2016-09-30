@@ -79,6 +79,14 @@ window.addEventListener( 'load', function () {
         ])
         .range([ 10, 50 ]);
     // ------------------------------------------------
+    // X AXIS
+    // ------------------------------------------------
+    let xAxis = d3.axisBottom( xScale );
+    // ------------------------------------------------
+    // Y AXIS
+    // ------------------------------------------------
+    let yAxis = d3.axisLeft( yScale );
+    // ------------------------------------------------
     // CHART
     // ------------------------------------------------
     let chart = d3.select('body')
@@ -117,6 +125,21 @@ window.addEventListener( 'load', function () {
         .attr( 'class', 'chart-label' )
         .attr( 'x', function ( d, i ) { return xScale( d.x ) + 'px'; })
         .attr( 'y', function ( d, i ) { return yScale( d.y ) + 'px'; });
+    // ------------------------------------------------
+    // CHART AXIS X
+    // ------------------------------------------------
+    let bottomAxis = chart.append('g')
+        .call( xAxis );
+    bottomAxis
+        .attr( 'class', 'axis-bottom' )
+        .attr( 'transform', 'translate(0,' + ( chartHeight - chartPadding ) + ')' );
+    // ------------------------------------------------
+    // CHART AXIS Y
+    // ------------------------------------------------
+    let leftAxis = chart.append('g')
+        .call( yAxis );
+    leftAxis.attr( 'class', 'axis-left' )
+        .attr( 'transform', 'translate(' + chartPadding + ',0)' );
 }, false );
 
 
