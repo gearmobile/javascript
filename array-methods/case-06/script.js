@@ -1,5 +1,5 @@
 window.addEventListener( 'load', function () {
-    //
+    // DATA
     let name = 'openSuperMenu';
     let test = {
         className: 'open menu'
