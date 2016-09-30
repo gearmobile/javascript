@@ -2,6 +2,7 @@ window.addEventListener( 'load', function () {
     //
     let chartWidth = 800;
     let chartHeight = 400;
+    let chartPadding = 60;
     let dataSet = [
         {
             x: 5,
@@ -10,7 +11,8 @@ window.addEventListener( 'load', function () {
         },
         {
             x: 480,
-            y: 90
+            y: 90,
+            r: 34
         },
         {
             x: 250,
@@ -53,42 +55,68 @@ window.addEventListener( 'load', function () {
             r: 21
         }
     ];
-    //
+    // COLORS
+    let colors = d3.scaleOrdinal( d3.schemeCategory10 );
+    // ------------------------------------------------
+    // SCALE X AXIS
+    // ------------------------------------------------
+    let xScale = d3.scaleLinear()
+        .domain([ 0, d3.max( dataSet, function ( d ) { return d.x; } ) ])
+        .range([ chartPadding, chartWidth - chartPadding ]);
+    // ------------------------------------------------
+    // SCALE Y AXIS
+    // ------------------------------------------------
+    let yScale = d3.scaleLinear()
+        .domain([ 0, d3.max( dataSet, function (d) { return d.y; } ) ])
+        .range([ chartHeight - chartPadding, chartPadding ]);
+    // ------------------------------------------------
+    // SCALE RADIUS
+    // ------------------------------------------------
+    let rScale = d3.scaleLinear()
+        .domain([
+            d3.min( dataSet, function ( d ) { return d.r; }),
+            d3.max( dataSet, function ( d ) { return d.r; })
+        ])
+        .range([ 10, 50 ]);
+    // ------------------------------------------------
+    // CHART
+    // ------------------------------------------------
     let chart = d3.select('body')
         .append('svg')
         .attr( 'width', chartWidth )
         .attr( 'height', chartHeight )
         .attr( 'class', 'chart' );
-    //
+    // ------------------------------------------------
+    // CIRCLES
+    // ------------------------------------------------
     let chartCircle = chart.selectAll('circle')
         .data( dataSet )
         .enter()
         .append('circle')
         .attr( 'class', 'chart-item' )
+        .attr( 'fill', function ( d, i ) {
+            return colors(i);
+        })
         .attr( 'cx', function ( d, i ) {
-            return d.x + 'px';
+            return xScale( d.x ) + 'px';
         })
         .attr( 'cy', function ( d, i ) {
-            return d.y + 'px';
+            return yScale( d.y ) + 'px';
         })
         .attr( 'r', function ( d ) {
-            return d.r;
+            return rScale( d.r ) + 'px';
         });
-    //
+    // ------------------------------------------------
+    // TEXT
+    // ------------------------------------------------
     let chartlabels = chart.selectAll('text')
         .data( dataSet )
         .enter()
         .append('text')
-        .text( function ( d ) {
-            return d.x + ',' + d.y;
-        })
+        .text( function ( d ) { return d.x + ',' + d.y; })
         .attr( 'class', 'chart-label' )
-        .attr( 'x', function ( d, i ) {
-            return d.x + 'px';
-        })
-        .attr( 'y', function ( d, i ) {
-            return d.y + 'px';
-        })
+        .attr( 'x', function ( d, i ) { return xScale( d.x ) + 'px'; })
+        .attr( 'y', function ( d, i ) { return yScale( d.y ) + 'px'; });
 }, false );
 
 
