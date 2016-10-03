@@ -34,6 +34,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
     console.log('-------------------------------');
     console.log( minValueComplex, maxValueComplex, minMaxValueComplex );
     console.log('-------------------------------');
+    //
     let filterValue = simpleArray.filter( function ( item ) {
         return item > 20;
     });
@@ -43,6 +44,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
     console.log( filterValue );
     console.log( filterValueObject );
     console.log('-------------------------------');
+    //
     let remappedArray = complexArray.map( function ( item ) {
         return {
             donut: item.key,

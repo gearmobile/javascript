@@ -3,8 +3,6 @@ window.addEventListener( 'DOMContentLoaded', function () {
     let heightChart = 400;
     let widthChart = 900;
     let colorTemp;
-    // let widthBar = 50;
-    // let offsetBar = 5;
     // -----------------------------------------------------
     let data = [];
     let count = 30;
