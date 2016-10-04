@@ -1,0 +1,12 @@
+.axis path {
+    fill: none;
+    stroke: grey;
+    shape-rendering: crispEdges;
+}
+
+.axis text {}
+
+.axis line {
+    stroke: grey;
+    shape-rendering: crispEdges;
+}
