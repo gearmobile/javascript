@@ -29,8 +29,8 @@ window.addEventListener( 'load', function () {
     var BAR_SPACING_BOTTOM = BAR_SPACING_TOP;
     var BAR_HEIGHT = BAR_HEIGHT_AVAIL - BAR_SPACING_TOP - BAR_SPACING_BOTTOM;
     //
-    var ARC_RADIUS_INNER = 25;
-    var ARC_RADIUS_OUTER = 25;
+    var ARC_RADIUS_INNER = 50;
+    var ARC_RADIUS_OUTER = 100;
     var ARC_SHIFT = 20;
     var ARC_ANIM_DELAY_1 = 400;
     var ARC_ANIM_DELAY_2 = 50;
@@ -79,24 +79,47 @@ window.addEventListener( 'load', function () {
         .classed( 'axis', true )
         .attr( 'transform', 'translate(' + ( MARGINS.LEFT + PADDING ) + ',' + ( MARGINS.TOP + PADDING + PLOT_HEIGHT + PADDING ) + ')' )
         .call( horBottomAxis );
-    //
-    var arc = d3.svg.arc()
+    // ----------------------------------------------------------
+    // create arc function
+    let arc = d3.svg.arc()
         .innerRadius( ARC_RADIUS_INNER )
-        .outerRadius( ARC_RADIUS_OUTER )
-        .startAngle( 0 )
-        .endAngle( Math.PI / 4 );
-    var chartPie = chart.append('g')
-        .attr( 'transform', 'translate('+ ( CHART_WIDTH / 2 ) + ',' + ( CHART_HEIGHT / 2 ) +')' )
-        .attr( 'chart-pie', true );
+        .outerRadius( ARC_RADIUS_OUTER );
     //
-    var pie = d3.layout.pie()
+    // create pie function
+    let pie = d3.layout.pie()
         .value( function ( d ) {
             return d;
         });
     //
-    chart.append('path')
-        .attr( 'd', arc )
-        .attr( 'transform', 'translate( 100, 100 )' );
+    // create area for pie chart
+    let pieChart = chart.append('g')
+        .attr( 'class', 'pie-chart' )
+        .attr( 'transform', 'translate(' + CHART_WIDTH / 2 + ', ' + CHART_HEIGHT / 2 + ')' );
+    //
+    // create pie slices and bind data at ones
+    let pieSlices = pieChart.selectAll('.pie-slice')
+        .data( pie( dataSet ) )
+        .enter()
+        .append('g')
+        .attr( 'class', 'pie-slice' );
+    //
+    // draw slices by arc function
+    pieSlices.append('path')
+        .attr( 'fill', function ( d, i ) {
+            return colors(i);
+        })
+        .attr( 'd', arc );
+    // add labels at slices
+    pieSlices.append('text')
+        .text(function ( d ) {
+            return d.data;
+        })
+        .attr( 'text-anchor', 'middle' )
+        .attr( 'transform', function ( d ) {
+            return 'translate(' + arc.centroid( d ) + ')';
+        })
+        .attr( 'fill', 'firebrick' )
+        .attr( 'font-size', '12px' );
 }, false );
 
 
