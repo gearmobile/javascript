@@ -1,29 +1,32 @@
 window.addEventListener( 'load', function () {
     // METHOD JSON
     let urlJSON = '../library/test.json';
-    d3.json( urlJSON, function ( error, data ) {
-        console.log( data[0] );
+    d3.json( urlJSON, function ( error, rawData ) {
+        console.log( rawData[0] );
     });
-    console.log( 'Hello from D3.js' );
+    console.log( 'Hello from D3.js!' ); // async!
     // METHOD TSV
     let urlTSV = '../library/test.tsv';
-    d3.tsv( urlTSV, function ( error, data ) {
-        console.log( data[0] );
+    d3.tsv( urlTSV, function ( error, rawData ) {
+        console.log( rawData[0] );
     });
     // METHOD CSV
     let urlCSV = '../library/test.csv';
-    d3.csv( urlCSV, function ( error, data ) {
-        console.log( data[0] );
+    d3.csv( urlCSV, function ( error, rawData ) {
+        console.log( rawData[0] );
     });
-    //
-    d3.csv( urlCSV, function ( error, data ) {
-        let datum = data.map( function ( d ) {
+    // FILTER DATA
+    d3.csv( urlCSV, function ( error, rawData ) {
+        let data = rawData.map( function( d ) {
+            "use strict";
             return {
-                Episode: +d.Episode,
-                Title: d.Title,
-                Viewers: +d.USViewers
-            }
+                keyValue1: +d.Episode,
+                keyValue2: d.Title,
+                keyValue3: +d.USViewers
+            };
         });
-        console.log( datum );
+        console.log( data );
     });
+    // GeoJSON
+    // TopoJSON
 }, false );
