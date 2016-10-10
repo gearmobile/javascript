@@ -1,8 +1,0 @@
-div {
-    padding: 5px 10px;
-    border: 1px solid #000;
-}
-
-div:not(:last-child) {
-    margin-bottom: 20px;
-}
