@@ -11,16 +11,16 @@ window.addEventListener( 'DOMContentLoaded', function () {
         data.push( Math.random() * value + 2 );
     }
     // -----------------------------------------------------
-    let colors = d3.scale.linear()
+    let colors = d3.scaleLinear()
         .domain([ 0, data.length * 0.33, data.length * 0.66, data.length ])
         .range([ '#b5899', '#ffb832', '#c61c6f', '#85992c' ]);
     // -----------------------------------------------------
-    let xScale = d3.scale.ordinal()
+    let xScale = d3.scaleBand()
         .domain( d3.range( 0, data.length ) )
-        .rangeBands([ 0, widthChart ], 0.02, 0 );
+        .range([ 0, widthChart ])
+        .padding( 0.1 );
     // -----------------------------------------------------
-    let yScale = d3.scale
-        .linear()
+    let yScale = d3.scaleLinear()
         .domain([ 0, d3.max( data ) ])
         .range([ 0, heightChart ]);
     // -----------------------------------------------------
@@ -35,7 +35,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
         .enter()
         .append( 'rect' )
         .classed( 'chart-item', true )
-        .attr( 'width', xScale.rangeBand() )
+        .attr( 'width', xScale.bandwidth() )
         .attr( 'height', function ( d, i ) {
             return yScale( d );
         })
