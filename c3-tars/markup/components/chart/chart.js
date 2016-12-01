@@ -48,5 +48,14 @@ const donutChart = c3.generate({
     },
     donut: {
         title: 'Title'
+    },
+    legend: {
+        show: false
+    },
+    tooltip: {
+        show: false
+    },
+    color: {
+        pattern: [ '#00ced1', '#a9a9a9' ]
     }
 });
