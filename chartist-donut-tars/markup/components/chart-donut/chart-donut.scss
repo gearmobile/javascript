@@ -1,0 +1,45 @@
+.holder {
+  lost-center: 100% flex;
+}
+
+.holder__item {
+  lost-column: 1/4;
+  lost-column-gutter: 1rem;
+
+  @media screen and ( max-width: 800px ) {
+    lost-column: 1/2;
+    lost-column-gutter: 1rem;
+
+    &:nth-child( -n + 2 ) {
+      margin-bottom: 1rem;
+    }
+
+  }
+
+  @media screen and ( max-width: 500px ) {
+    lost-column: 1/1;
+    lost-column-gutter: 1rem;
+
+    &:nth-child( -n + 3 ) {
+      margin-bottom: 1rem;
+    }
+
+  }
+
+}
+
+.ct-series-a .ct-slice-donut {
+  stroke: cyan;
+}
+
+.ct-series-b .ct-slice-donut {
+  stroke: grey;
+}
+
+.holder-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50% );
+  font-size: 2.6rem;
+}
